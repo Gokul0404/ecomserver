@@ -13,9 +13,7 @@ app.use(cors())
 app.use(express.urlencoded({extended:false}))
      
 mongoose
-  .connect(
-    "mongodb+srv://gokul332020:sample@cluster0.aoyk9fm.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect(process.env.Mongo_DB)
   .then(() => {
     console.log("db connect");
   })
